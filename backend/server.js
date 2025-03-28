@@ -16,7 +16,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/sessions', sessionRoutes);
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/myTypingApp', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('MongoDB connected');
     const PORT = process.env.PORT || 5000;
